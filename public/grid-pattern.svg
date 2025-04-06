@@ -1,0 +1,4 @@
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M1 0V100M0 1H100" stroke="rgba(255,255,255,0.05)" stroke-width="0.5" vector-effect="non-scaling-stroke"/>
+  <path d="M25 0V100M50 0V100M75 0V100M0 25H100M0 50H100M0 75H100" stroke="rgba(255,255,255,0.05)" stroke-width="0.25" vector-effect="non-scaling-stroke"/>
+</svg> 
