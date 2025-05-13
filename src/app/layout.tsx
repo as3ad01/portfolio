@@ -1,8 +1,9 @@
-'use client';
-
+import type { Metadata } from 'next';
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import "./globals.css";
+import Navigation from '@/components/ui/Navigation';
+import ScrollToTop from '@/components/ui/ScrollToTop';
 
 const inter = Inter({
   variable: "--font-sans",
@@ -11,6 +12,29 @@ const inter = Inter({
 
 // We'll use CSS variables for the monospace font since Next.js doesn't have a good monospace font
 // that matches Geist Mono's aesthetics through next/font/google
+
+export const metadata: Metadata = {
+  title: 'Mohamed Chams Eddine Lhouij | Full Stack Developer',
+  description: 'Full Stack Software Developer specializing in Next.js, React, and modern web technologies. Building innovative digital solutions with a focus on user experience and clean architecture.',
+  keywords: ['Full Stack Developer', 'Software Engineer', 'Next.js', 'React', 'TypeScript', 'Web Development', 'Frontend Developer', 'Backend Developer'],
+  authors: [{ name: 'Mohamed Chams Eddine Lhouij' }],
+  creator: 'Mohamed Chams Eddine Lhouij',
+  publisher: 'Mohamed Chams Eddine Lhouij',
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://your-domain.com',
+    title: 'Mohamed Chams Eddine Lhouij | Full Stack Developer',
+    description: 'Full Stack Software Developer specializing in Next.js, React, and modern web technologies. Building innovative digital solutions with a focus on user experience and clean architecture.',
+    siteName: 'Mohamed Chams Eddine Lhouij Portfolio',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Mohamed Chams Eddine Lhouij | Full Stack Developer',
+    description: 'Full Stack Software Developer specializing in Next.js, React, and modern web technologies. Building innovative digital solutions with a focus on user experience and clean architecture.',
+    creator: '@your-twitter-handle',
+  },
+};
 
 export default function RootLayout({
   children,
@@ -28,7 +52,9 @@ export default function RootLayout({
         className={`${inter.variable} font-sans antialiased`}
       >
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+          <Navigation />
           {children}
+          <ScrollToTop />
         </ThemeProvider>
       </body>
     </html>

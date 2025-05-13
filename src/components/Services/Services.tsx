@@ -1,44 +1,71 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Code, Database, Layout, Cloud, CheckCircle, Zap, Users, Server } from 'lucide-react';
+import { Code, Database, Layout, Cloud, CheckCircle, Zap, Users, Server, Clock, Layers, Rocket } from 'lucide-react';
 import GradientText from '../ui/GradientText';
 
 const services = [
   {
-    title: "Web App Architecture",
-    description: "We build ultra-performant frontend and backend stacks tailored for your specific needs.",
-    icon: Layout,
+    title: "Setup & Planning",
+    description: "Initial project setup and planning phase, including environment configuration and project structure.",
+    icon: Clock,
     color: 'from-blue-500/20 to-cyan-400/20',
     borderColor: 'border-blue-500/30',
-    textColor: 'text-blue-400'
+    textColor: 'text-blue-400',
+    duration: "1 Week",
+    details: [
+      "Project initialization",
+      "Environment setup",
+      "Development workflow configuration",
+      "Team alignment and planning"
+    ]
   },
   {
-    title: "API Development",
-    description: "RESTful and GraphQL APIs designed with performance, security, and developer experience in mind.",
-    icon: Code,
+    title: "Architecture & Design",
+    description: "Comprehensive architecture planning and UI/UX design using our custom component library.",
+    icon: Layers,
     color: 'from-indigo-500/20 to-violet-400/20',
     borderColor: 'border-indigo-500/30',
-    textColor: 'text-indigo-400'
+    textColor: 'text-indigo-400',
+    duration: "2 Weeks",
+    details: [
+      "System architecture design",
+      "Database schema planning",
+      "UI/UX design with our component library",
+      "API endpoint planning"
+    ]
   },
   {
-    title: "UI/UX Engineering",
-    description: "Pixel-perfect implementations of complex interfaces with flawless interactions.",
-    icon: Zap,
+    title: "Development Phase",
+    description: "Efficient development using Next.js, Tailwind CSS, and our custom UI component library.",
+    icon: Code,
     color: 'from-blue-500/20 to-blue-400/20',
     borderColor: 'border-blue-500/30',
-    textColor: 'text-blue-400'
+    textColor: 'text-blue-400',
+    duration: "4-6 Weeks",
+    details: [
+      "Frontend with Next.js & Tailwind CSS",
+      "Custom UI components integration",
+      "Firebase for database & storage",
+      "Zustand for state management"
+    ]
   },
   {
-    title: "DevOps & Infrastructure",
-    description: "Cloud-native architectures using Kubernetes, Terraform, and modern CI/CD pipelines.",
-    icon: Server,
+    title: "Deployment & Testing",
+    description: "Seamless deployment to Vercel for client-dev testing and feedback integration.",
+    icon: Rocket,
     color: 'from-indigo-500/20 to-violet-400/20',
     borderColor: 'border-indigo-500/30',
-    textColor: 'text-indigo-400'
+    textColor: 'text-indigo-400',
+    duration: "1 Week",
+    details: [
+      "Vercel deployment",
+      "Client-dev testing",
+      "Performance optimization",
+      "Feedback integration"
+    ]
   }
 ];
-
 
 export default function Services() {
   return (
@@ -61,10 +88,10 @@ export default function Services() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-white">
-            <GradientText text="Services" className="font-bold" /> <span>&amp; Expertise</span>
+            Our <GradientText text="Process" className="font-bold" />
           </h2>
-          <p className="text-white/90 max-w-2xl mx-auto text-lg md:text-xl text-shadow-sm">
-            We deliver end-to-end solutions with cutting-edge technology and best practices.
+          <p className="text-white/90 max-w-3xl mx-auto text-lg md:text-xl text-shadow-sm">
+            A streamlined approach to software development, leveraging our custom UI component library and modern tech stack for efficient delivery.
           </p>
         </motion.div>
         
@@ -98,33 +125,25 @@ export default function Services() {
                       <Icon size={28} className="group-hover:text-white transition-colors duration-300" />
                     </div>
                     
-                    <motion.div 
-                      initial={{ scale: 0.8, opacity: 0 }}
-                      whileInView={{ scale: 1, opacity: 1 }}
-                      transition={{ delay: 0.5 }}
-                      className="w-10 h-10 rounded-full bg-blue-500/10 backdrop-blur-sm opacity-0 
-                        group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center shadow-lg"
-                    >
-                      <svg className="w-4 h-4 text-blue-400" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
-                    </motion.div>
+                    <div className="px-3 py-1 rounded-full bg-white/5 text-sm font-medium text-white/80">
+                      {service.duration}
+                    </div>
                   </div>
                   
                   <h3 className={`text-2xl font-bold mb-4 ${service.textColor} group-hover:translate-x-1 transition-transform duration-300`}>
                     {service.title}
                   </h3>
                   
-                  <p className="text-white/80 leading-relaxed group-hover:text-white transition-colors duration-300">
+                  <p className="text-white/80 leading-relaxed group-hover:text-white transition-colors duration-300 mb-6">
                     {service.description}
                   </p>
                   
-                  {/* Feature check marks */}
-                  <ul className="mt-6 space-y-2">
-                    {[1,2,3].map((item, i) => (
+                  {/* Feature list */}
+                  <ul className="space-y-3">
+                    {service.details.map((detail, i) => (
                       <li key={i} className="flex items-center text-white/70 group-hover:text-white/90 transition-colors">
                         <CheckCircle size={16} className="mr-2 text-blue-400/80" />
-                        <span className="text-sm">Feature {item}</span>
+                        <span className="text-sm">{detail}</span>
                       </li>
                     ))}
                   </ul>
@@ -133,9 +152,40 @@ export default function Services() {
             );
           })}
         </div>
-        
-        
 
+        {/* Tech Stack Summary */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="bg-black/20 backdrop-blur-sm rounded-2xl p-8 border border-white/5"
+        >
+          <h3 className="text-2xl font-bold mb-6 text-white">Our Tech Stack</h3>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="space-y-2">
+              <h4 className="text-white/60 text-sm">Frontend</h4>
+              <p className="text-white/90">Next.js</p>
+              <p className="text-white/90">Tailwind CSS</p>
+              <p className="text-white/90">Custom UI Library</p>
+            </div>
+            <div className="space-y-2">
+              <h4 className="text-white/60 text-sm">State Management</h4>
+              <p className="text-white/90">Zustand</p>
+              <p className="text-white/90">Server Actions</p>
+            </div>
+            <div className="space-y-2">
+              <h4 className="text-white/60 text-sm">Backend & Storage</h4>
+              <p className="text-white/90">Firebase</p>
+              <p className="text-white/90">Server Actions</p>
+            </div>
+            <div className="space-y-2">
+              <h4 className="text-white/60 text-sm">Deployment</h4>
+              <p className="text-white/90">Vercel</p>
+              <p className="text-white/90">Client-Dev Testing</p>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

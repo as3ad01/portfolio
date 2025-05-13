@@ -2,33 +2,26 @@
 
 import { motion } from 'framer-motion';
 import { 
-  Code, Database, Globe, Server, PenTool, 
-  Cpu, Box, Cloud, Layers, Command, GitBranch, Workflow 
+  Code, Database, Globe, Server, PenTool
 } from 'lucide-react';
 import GradientText from '../ui/GradientText';
 
 const technologies = [
-  { name: 'React', Icon: Code, category: 'frontend' },
   { name: 'Next.js', Icon: Globe, category: 'frontend' },
-  { name: 'TypeScript', Icon: Code, category: 'language' },
-  { name: 'Node.js', Icon: Server, category: 'backend' },
-  { name: 'GraphQL', Icon: Database, category: 'backend' },
-  { name: 'PostgreSQL', Icon: Database, category: 'database' },
-  { name: 'Docker', Icon: Box, category: 'devops' },
-  { name: 'AWS', Icon: Cloud, category: 'infrastructure' },
   { name: 'Tailwind CSS', Icon: PenTool, category: 'frontend' },
-  { name: 'Redis', Icon: Database, category: 'database' },
-  { name: 'Kubernetes', Icon: Workflow, category: 'devops' },
-  { name: 'Git', Icon: GitBranch, category: 'devops' }
+  { name: 'Node.js', Icon: Server, category: 'backend' },
+  { name: 'Express.js', Icon: Server, category: 'backend' },
+  { name: 'Firebase', Icon: Database, category: 'database' },
+  { name: 'Prisma', Icon: Database, category: 'database' },
+  { name: 'TypeScript', Icon: Code, category: 'languages' },
+  { name: 'Java', Icon: Code, category: 'languages' }
 ];
 
 const categories = [
   { name: 'Frontend', color: 'bg-gradient-to-r from-blue-500/20 to-cyan-400/20', textColor: 'text-blue-400' },
   { name: 'Backend', color: 'bg-gradient-to-r from-emerald-500/20 to-teal-400/20', textColor: 'text-emerald-400' },
   { name: 'Database', color: 'bg-gradient-to-r from-orange-500/20 to-amber-400/20', textColor: 'text-orange-400' },
-  { name: 'DevOps', color: 'bg-gradient-to-r from-pink-500/20 to-rose-400/20', textColor: 'text-pink-400' },
-  { name: 'Infrastructure', color: 'bg-gradient-to-r from-violet-500/20 to-purple-400/20', textColor: 'text-violet-400' },
-  { name: 'Language', color: 'bg-gradient-to-r from-yellow-500/20 to-lime-400/20', textColor: 'text-yellow-400' }
+  { name: 'Languages', color: 'bg-gradient-to-r from-yellow-500/20 to-lime-400/20', textColor: 'text-yellow-400' }
 ];
 
 // Function to get category color for a tech item
@@ -112,7 +105,7 @@ export default function TechStack() {
         </div>
         
         {/* Tech categories */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-12">
           {categories.map((category, index) => (
             <motion.div
               key={category.name}
@@ -130,7 +123,7 @@ export default function TechStack() {
         </div>
         
         {/* Tech grid with hexagon-like cards */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-4">
           {technologies.map((tech, index) => {
             const Icon = tech.Icon;
             const categoryColor = getCategoryColor(tech.category);
@@ -168,8 +161,6 @@ export default function TechStack() {
             );
           })}
         </div>
-        
-        
       </div>
     </section>
   );
