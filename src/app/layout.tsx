@@ -31,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <title>Your Name | Software Engineer</title>
+        <title>Mohamed Chams Eddine Lhouij | Full Stack Developer</title>
         <meta name="description" content="Portfolio of a software engineer building for the next era of the internet" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
