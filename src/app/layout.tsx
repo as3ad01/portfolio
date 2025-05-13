@@ -20,20 +20,7 @@ export const metadata: Metadata = {
   authors: [{ name: 'Mohamed Chams Eddine Lhouij' }],
   creator: 'Mohamed Chams Eddine Lhouij',
   publisher: 'Mohamed Chams Eddine Lhouij',
-  openGraph: {
-    type: 'website',
-    locale: 'en_US',
-    url: 'https://your-domain.com',
-    title: 'Mohamed Chams Eddine Lhouij | Full Stack Developer',
-    description: 'Full Stack Software Developer specializing in Next.js, React, and modern web technologies. Building innovative digital solutions with a focus on user experience and clean architecture.',
-    siteName: 'Mohamed Chams Eddine Lhouij Portfolio',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Mohamed Chams Eddine Lhouij | Full Stack Developer',
-    description: 'Full Stack Software Developer specializing in Next.js, React, and modern web technologies. Building innovative digital solutions with a focus on user experience and clean architecture.',
-    creator: '@your-twitter-handle',
-  },
+
 };
 
 export default function RootLayout({
