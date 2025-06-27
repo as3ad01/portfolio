@@ -186,7 +186,7 @@ export default function Footer() {
         >
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-500 text-sm">
-              &copy; {currentYear} Mohamed Chams Eddine Lhouij. All rights reserved.
+              &copy; {currentYear} Mohamed Chams Eddine Lhouij, Saif Ass'ad and Turan Myrzabekov. All rights reserved.
             </p>
           </div>
         </motion.div>
