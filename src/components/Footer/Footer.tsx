@@ -1,6 +1,6 @@
 'use client';
 
-import { Github, Mail, ArrowRight, ExternalLink } from 'lucide-react';
+import { Github, Mail, ArrowRight, ExternalLink, Linkedin } from 'lucide-react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { useRef, useState } from 'react';
@@ -13,6 +13,7 @@ export default function Footer() {
   const socialLinks = [
     { name: 'Mohamed Chams Eddine Lhouij GitHub', icon: Github, href: 'https://github.com/chamsedd0' },
     { name: "Saif Ass'ad GitHub", icon: Github, href: 'https://github.com/as3ad01' },
+    { name: 'Turan Myrzabekov LinkedIn', icon: Linkedin, href: 'https://www.linkedin.com/in/turan-myrzabekov-8a716428a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app' },
   ];
 
   return (
