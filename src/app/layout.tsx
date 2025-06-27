@@ -14,13 +14,12 @@ const inter = Inter({
 // that matches Geist Mono's aesthetics through next/font/google
 
 export const metadata: Metadata = {
-  title: 'Mohamed Chams Eddine Lhouij | Full Stack Developer',
+  title: 'Portfolio',
   description: 'Full Stack Software Developer specializing in Next.js, React, and modern web technologies. Building innovative digital solutions with a focus on user experience and clean architecture.',
   keywords: ['Full Stack Developer', 'Software Engineer', 'Next.js', 'React', 'TypeScript', 'Web Development', 'Frontend Developer', 'Backend Developer'],
-  authors: [{ name: 'Mohamed Chams Eddine Lhouij' }],
-  creator: 'Mohamed Chams Eddine Lhouij',
-  publisher: 'Mohamed Chams Eddine Lhouij',
-
+  authors: [{ name: 'Portfolio' }],
+  creator: 'Portfolio',
+  publisher: 'Portfolio',
 };
 
 export default function RootLayout({
@@ -31,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <title>Mohamed Chams Eddine Lhouij | Full Stack Developer</title>
+        <title>Portfolio</title>
         <meta name="description" content="Portfolio of a software engineer building for the next era of the internet" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
