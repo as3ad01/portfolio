@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Code, Database, Layout, Cloud, CheckCircle, Zap, Users, Server, Clock, Layers, Rocket } from 'lucide-react';
+import { Code, Database, Layout, Cloud, CheckCircle, Zap, Users, Server, Clock, Layers, Rocket, PenTool } from 'lucide-react';
 import GradientText from '../ui/GradientText';
 
 const services = [
@@ -13,6 +13,8 @@ const services = [
     borderColor: 'border-blue-500/30',
     textColor: 'text-blue-400',
     duration: "1 Week",
+    headingColor: 'text-[#00B3FF]',
+    hoverBg: 'hover:bg-gradient-to-br hover:from-[#001F3F] hover:to-[#004080]',
     details: [
       "Define project scope and goals",
       "Project & technical planning",
@@ -23,6 +25,26 @@ const services = [
     ]
   },
   {
+    title: "UX/UI Design",
+    description: "Focused phase for creating user-centered designs and visual identity aligned with the brand and user needs.",
+    icon: PenTool,
+    color: 'from-pink-500/20 to-yellow-400/20',
+    borderColor: 'border-pink-500/30',
+    textColor: 'text-pink-400',
+    duration: "1–2 Weeks",
+    headingColor: 'text-pink-400',
+    hoverBg: 'hover:bg-gradient-to-br hover:from-pink-500/20 hover:to-yellow-400/20',
+    details: [
+      "Conduct UX research (surveys, interviews, competitor analysis)",
+      "Define user personas & key use cases",
+      "Design low-fidelity wireframes for main flows",
+      "Create high-fidelity UI mockups in Figma",
+      "Establish design system (color, typography, components)",
+      "Iterate with feedback from team & users",
+      "Prepare assets and design handoff to developers"
+    ]
+  },
+  {
     title: "Research & Architecture",
     description: "Deep dive into research, data structure, user flow, and technical architecture.",
     icon: Layers,
@@ -30,6 +52,8 @@ const services = [
     borderColor: 'border-indigo-500/30',
     textColor: 'text-indigo-400',
     duration: "2 Weeks",
+    headingColor: 'text-[#FFD93D]',
+    hoverBg: 'hover:bg-gradient-to-br hover:from-[#3D2C00] hover:to-[#806C00]',
     details: [
       "Research competitors and tech",
       "Create user personas",
@@ -47,6 +71,8 @@ const services = [
     borderColor: 'border-blue-500/30',
     textColor: 'text-blue-400',
     duration: "4–6 Weeks",
+    headingColor: 'text-[#00FFAB]',
+    hoverBg: 'hover:bg-gradient-to-br hover:from-[#003F3F] hover:to-[#007F7F]',
     details: [
       "Frontend: Build screens ",
       "Backend: Connect Firebase (Auth, Firestore, Storage)",
@@ -65,6 +91,8 @@ const services = [
     borderColor: 'border-indigo-500/30',
     textColor: 'text-indigo-400',
     duration: "1 Week",
+    headingColor: 'text-[#A78BFA]',
+    hoverBg: 'hover:bg-gradient-to-br hover:from-[#2D1E52] hover:to-[#4F3CC9]',
     details: [
       "Final UI improvements",
       "Performance optimization",
@@ -109,20 +137,19 @@ export default function Services() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 mb-24">
           {services.map((service, index) => {
             const Icon = service.icon;
-            
+            // Center the last box on its own row for desktop/tablet
+            const isLast = index === services.length - 1;
             return (
               <motion.div 
                 key={index}
-                className="group"
+                className={`group${isLast ? ' md:col-span-2 md:mx-auto md:w-1/2' : ''}`}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <div className="relative rounded-xl bg-gradient-to-br from-[#0c101d]/70 to-[#0f1424]/70 border border-white/5 p-8 h-full transition-all duration-500 
-                  hover:shadow-[0_10px_40px_rgba(0,0,0,0.3)] hover:border-[rgba(59,130,246,0.2)]
-                  backdrop-blur-sm"
-                >
+                <div className={`relative rounded-xl bg-gradient-to-br from-[#0c101d]/70 to-[#0f1424]/70 border border-white/5 p-8 h-full transition-all duration-500 
+                  ${service.hoverBg} backdrop-blur-sm`}>
                   {/* Glow effect on hover */}
                   <div className={`absolute inset-0 rounded-xl bg-gradient-to-br ${service.color} opacity-0 
                     group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-[10px]`}>
@@ -140,7 +167,7 @@ export default function Services() {
                     </div>
                   </div>
                   
-                  <h3 className={`text-2xl font-bold mb-4 ${service.textColor} group-hover:translate-x-1 transition-transform duration-300`}>
+                  <h3 className={`text-2xl font-bold mb-4 ${service.headingColor} group-hover:translate-x-1 transition-transform duration-300`}>
                     {service.title}
                   </h3>
                   
