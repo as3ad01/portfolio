@@ -354,28 +354,6 @@ export default function Hero() {
           />
         </div>
       </motion.div>
-      
-      {/* Scroll indicator */}
-      <motion.div 
-        className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ 
-          duration: 1, 
-          delay: 1.5 
-        }}
-      >
-        <Link href="#philosophy" className="flex flex-col items-center">
-          <span className="text-sm mb-2 text-white/80 font-medium">Scroll to explore</span>
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-            className="p-2 rounded-full bg-white/5 backdrop-blur-sm border border-white/10 shadow-lg"
-          >
-            <ChevronDown className="text-accent" />
-          </motion.div>
-        </Link>
-      </motion.div>
     </section>
   );
 } 

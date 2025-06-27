@@ -23,7 +23,7 @@ export default function Navigation() {
     { name: 'Services', href: '#services' },
     { name: 'Projects', href: '#projects' },
     { name: 'Tech Stack', href: '#tech-stack' },
-    { name: 'About Me', href: '#team' },
+    { name: 'About Us', href: '#team' },
     { name: 'Contact', href: '#contact' },
   ];
 

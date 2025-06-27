@@ -8,10 +8,11 @@ import GradientText from '../ui/GradientText';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
-  const [emailHovered, setEmailHovered] = useState(false);
+  const [emailHovered, setEmailHovered] = useState<string | null>(null);
   
   const socialLinks = [
-    { name: 'GitHub', icon: Github, href: 'https://github.com/chamsedd0' },
+    { name: 'Mohamed Chams Eddine Lhouij GitHub', icon: Github, href: 'https://github.com/chamsedd0' },
+    { name: "Saif Ass'ad GitHub", icon: Github, href: 'https://github.com/as3ad01' },
   ];
 
   return (
@@ -46,24 +47,72 @@ export default function Footer() {
                 Have a project in mind or want to discuss potential collaborations? Reach out to me.
               </p>
               
-              <div>
+              <div className="flex flex-col space-y-6">
                 <div 
                   className="inline-flex items-center transition-all duration-300 group cursor-pointer"
-                  onMouseEnter={() => setEmailHovered(true)}
-                  onMouseLeave={() => setEmailHovered(false)}
+                  onMouseEnter={() => setEmailHovered('mohamed')}
+                  onMouseLeave={() => setEmailHovered(null)}
                 >
                   <div className="mr-4 w-12 h-12 rounded-full bg-white/5 flex items-center justify-center border border-white/10 transition-all duration-300 group-hover:border-accent/30 group-hover:bg-white/10">
                     <Mail className="w-5 h-5 text-accent" />
                   </div>
                   <div>
-                    <p className="text-sm text-gray-400">Email me directly</p>
+                    <p className="text-sm text-gray-400">Mohamed Chams Eddine Lhouij</p>
                     <a 
                       href="mailto:lhouijchams@gmail.com" 
                       className="text-white hover:text-accent transition-colors flex items-center"
                     >
                       lhouijchams@gmail.com
                       <motion.div
-                        animate={{ x: emailHovered ? 5 : 0 }}
+                        animate={{ x: emailHovered === 'mohamed' ? 5 : 0 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <ArrowRight className="ml-2 w-4 h-4" />
+                      </motion.div>
+                    </a>
+                  </div>
+                </div>
+                <div 
+                  className="inline-flex items-center transition-all duration-300 group cursor-pointer"
+                  onMouseEnter={() => setEmailHovered('saif')}
+                  onMouseLeave={() => setEmailHovered(null)}
+                >
+                  <div className="mr-4 w-12 h-12 rounded-full bg-white/5 flex items-center justify-center border border-white/10 transition-all duration-300 group-hover:border-accent/30 group-hover:bg-white/10">
+                    <Mail className="w-5 h-5 text-accent" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-400">Saif Ass'ad</p>
+                    <a 
+                      href="mailto:saifas3ad01@gmail.com" 
+                      className="text-white hover:text-accent transition-colors flex items-center"
+                    >
+                      saifas3ad01@gmail.com
+                      <motion.div
+                        animate={{ x: emailHovered === 'saif' ? 5 : 0 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <ArrowRight className="ml-2 w-4 h-4" />
+                      </motion.div>
+                    </a>
+                  </div>
+                </div>
+                <div 
+                  className="inline-flex items-center transition-all duration-300 group cursor-pointer"
+                  onMouseEnter={() => setEmailHovered('turan')}
+                  onMouseLeave={() => setEmailHovered(null)}
+                >
+                  <div className="mr-4 w-12 h-12 rounded-full bg-white/5 flex items-center justify-center border border-white/10 transition-all duration-300 group-hover:border-accent/30 group-hover:bg-white/10">
+                    <Mail className="w-5 h-5 text-accent" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-400">Turan Myrzabekov</p>
+                    <a 
+                      href="mailto:turanm1004@gmail.com" 
+                      className="text-white hover:text-accent transition-colors flex items-center"
+                    >
+                      turanm1004@gmail.com
+                      <motion.div
+                        animate={{ x: emailHovered === 'turan' ? 5 : 0 }}
                         transition={{ duration: 0.2 }}
                       >
                         <ArrowRight className="ml-2 w-4 h-4" />
@@ -114,9 +163,10 @@ export default function Footer() {
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-12 h-12 rounded-full flex items-center justify-center bg-white/5 border border-white/10 hover:bg-white/10 hover:border-accent/30 hover:text-accent transition-all duration-300 group"
+                      className="w-12 h-12 rounded-full flex items-center justify-center bg-white/5 border border-white/10 hover:bg-white/10 hover:border-accent/30 hover:text-accent transition-all duration-300 group mx-2"
                       whileHover={{ y: -5 }}
                       aria-label={social.name}
+                      title={social.name}
                     >
                       <Icon size={20} />
                     </motion.a>
