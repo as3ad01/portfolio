@@ -4,7 +4,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef, useState } from 'react';
 import GradientText from '../ui/GradientText';
 import AnimatedText from '../ui/AnimatedText';
-import { Github, MapPin, GraduationCap, Globe, Calendar, Mail } from 'lucide-react';
+import { Github, MapPin, GraduationCap, Globe, Calendar, Mail, Linkedin } from 'lucide-react';
 import ThreeDScene from '../ui/ThreeDScene';
 
 const socialLinks = {
@@ -61,7 +61,8 @@ export default function Team() {
       title: "UI/UX Designer",
       image: "/icons/Default_pfp.svg.png",
       github: null,
-      email: "mailto:turanm1004@gmail.com"
+      email: "mailto:turanm1004@gmail.com",
+      linkedin: "https://www.linkedin.com/in/turan-myrzabekov-8a716428a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
     }
   ];
 
@@ -141,6 +142,17 @@ export default function Team() {
                       aria-label="GitHub"
                     >
                       <Github size={22} className="text-foreground/70 group-hover:text-accent transition-colors duration-300" />
+                    </a>
+                  )}
+                  {member.linkedin && (
+                    <a
+                      href={member.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-10 h-10 rounded-full flex items-center justify-center bg-gradient-to-tr from-black/60 to-accent/10 border border-white/10 hover:border-accent/60 hover:bg-accent/10 transition-all duration-300 group focus:outline-none transform hover:scale-110 hover:shadow-lg"
+                      aria-label="LinkedIn"
+                    >
+                      <Linkedin size={22} className="text-foreground/70 group-hover:text-accent transition-colors duration-300" />
                     </a>
                   )}
                   {member.email && (
