@@ -6,63 +6,73 @@ import GradientText from '../ui/GradientText';
 
 const services = [
   {
-    title: "Setup & Planning",
-    description: "Initial project setup and planning phase, including environment configuration and project structure.",
+    title: "Setup & Planning ",
+    description: "Kickoff phase to align vision, scope, roles, and set up the foundation.",
     icon: Clock,
     color: 'from-blue-500/20 to-cyan-400/20',
     borderColor: 'border-blue-500/30',
     textColor: 'text-blue-400',
     duration: "1 Week",
     details: [
-      "Project initialization",
-      "Environment setup",
-      "Development workflow configuration",
-      "Team alignment and planning"
+      "Define project scope and goals",
+      "Project & technical planning",
+      "Create shared workspace & comms",
+      "Setup version control (GitHub)",
+      "Setup shared documents (Notion)",
+      "Initial timeline & responsibilities"
     ]
   },
   {
-    title: "Architecture & Design",
-    description: "Comprehensive architecture planning and UI/UX design using our custom component library.",
+    title: "Research & Architecture",
+    description: "Deep dive into research, data structure, user flow, and technical architecture.",
     icon: Layers,
     color: 'from-indigo-500/20 to-violet-400/20',
     borderColor: 'border-indigo-500/30',
     textColor: 'text-indigo-400',
     duration: "2 Weeks",
     details: [
-      "System architecture design",
-      "Database schema planning",
-      "UI/UX design with our component library",
-      "API endpoint planning"
+      "Research competitors and tech",
+      "Create user personas",
+      "Map user journeys",
+      "Define core features & priorities",
+      "Plan database structure",
+      "Plan app architecture (frontend/backend)"
     ]
   },
   {
     title: "Development Phase",
-    description: "Efficient development using Next.js, Tailwind CSS, and our custom UI component library.",
+    description: "Core app development including frontend UI, backend integration, and core features.",
     icon: Code,
     color: 'from-blue-500/20 to-blue-400/20',
     borderColor: 'border-blue-500/30',
     textColor: 'text-blue-400',
-    duration: "4-6 Weeks",
+    duration: "4–6 Weeks",
     details: [
-      "Frontend with Next.js & Tailwind CSS",
-      "Custom UI components integration",
-      "Firebase for database & storage",
-      "Zustand for state management"
+      "Frontend: Build screens ",
+      "Backend: Connect Firebase (Auth, Firestore, Storage)",
+      "Implement main features:",
+      "Profile pages",
+      "Feedback & Ratings",
+      "Responsive design across devices",
+      "Regular testing & bug fixing"
     ]
   },
   {
-    title: "Deployment & Testing",
-    description: "Seamless deployment to Vercel for client-dev testing and feedback integration.",
+    title: "Finalization & Launch",
+    description: "Polishing, deploying to production, and client testing with feedback.",
     icon: Rocket,
     color: 'from-indigo-500/20 to-violet-400/20',
     borderColor: 'border-indigo-500/30',
     textColor: 'text-indigo-400',
     duration: "1 Week",
     details: [
-      "Vercel deployment",
-      "Client-dev testing",
+      "Final UI improvements",
       "Performance optimization",
-      "Feedback integration"
+      "Final QA testing",
+      "Deploy to Vercel",
+      "Client testing round",
+      "Gather final feedback",
+      "Project handoff & documentation"
     ]
   }
 ];
